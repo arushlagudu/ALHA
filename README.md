@@ -1,6 +1,6 @@
 # ALHA: Adaptive Low-Rank Hessian Approximation
 
-A quasi-Newton optimization algorithm that **automatically adapts its rank** during optimization — no manual tuning of the memory parameter `m` required.
+A quasi-Newton optimization algorithm that **automatically adapts its rank** during optimization, no manual tuning of the memory parameter `m` required.
 
 Unlike L-BFGS which requires you to choose a fixed memory parameter `m` upfront, ALHA uses a dual signal (held-out spectral quality + gradient norm progress rate) to dynamically increase or decrease rank throughout optimization. It uses low rank on easy problems to stay efficient, and high rank on hard problems to stay accurate.
 
