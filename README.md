@@ -23,6 +23,9 @@ ALHA/
 
 1. Open `ALHA_experiments.ipynb` in Kaggle
 2. Run all cells in order
+3. > Note: results/all_results.json contains the authors' original experimental output.
+> Running the notebook will generate your own results which may differ slightly
+> due to hardware differences.
 
 Results are saved to `results/all_results.json`.
 
