@@ -1,0 +1,302 @@
+{
+  "well_conditioned_quadratic": {
+    "ALHA": {
+      "iterations": 39,
+      "time": 0.049,
+      "final_grad_norm": 9.094e-09,
+      "converged": true,
+      "avg_rank": 12.0,
+      "accuracy": null
+    },
+    "L-BFGS (m=5)": {
+      "iterations": 35,
+      "time": 0.5,
+      "final_grad_norm": 6.704e-08,
+      "converged": true,
+      "avg_rank": 5,
+      "accuracy": null
+    },
+    "L-BFGS (m=10)": {
+      "iterations": 34,
+      "time": 0.657,
+      "final_grad_norm": 4.816e-08,
+      "converged": true,
+      "avg_rank": 10,
+      "accuracy": null
+    },
+    "L-BFGS (m=20)": {
+      "iterations": 34,
+      "time": 0.607,
+      "final_grad_norm": 5.146e-08,
+      "converged": true,
+      "avg_rank": 20,
+      "accuracy": null
+    },
+    "Adam": {
+      "iterations": 10000,
+      "time": 5.083,
+      "final_grad_norm": 0.0005059,
+      "converged": false,
+      "avg_rank": null,
+      "accuracy": null
+    },
+    "GD": {
+      "iterations": 3615,
+      "time": 1.624,
+      "final_grad_norm": 9.965e-09,
+      "converged": true,
+      "avg_rank": null,
+      "accuracy": null
+    }
+  },
+  "ill_conditioned_quadratic": {
+    "ALHA": {
+      "iterations": 6179,
+      "time": 7.368,
+      "final_grad_norm": 9.99e-09,
+      "converged": true,
+      "avg_rank": 4.1,
+      "accuracy": null
+    },
+    "L-BFGS (m=5)": {
+      "iterations": 767,
+      "time": 10.007,
+      "final_grad_norm": 9.245e-08,
+      "converged": true,
+      "avg_rank": 5,
+      "accuracy": null
+    },
+    "L-BFGS (m=10)": {
+      "iterations": 559,
+      "time": 9.439,
+      "final_grad_norm": 8.171e-08,
+      "converged": true,
+      "avg_rank": 10,
+      "accuracy": null
+    },
+    "L-BFGS (m=20)": {
+      "iterations": 483,
+      "time": 9.684,
+      "final_grad_norm": 8.278e-08,
+      "converged": true,
+      "avg_rank": 20,
+      "accuracy": null
+    },
+    "Adam": {
+      "iterations": 10000,
+      "time": 4.936,
+      "final_grad_norm": 18.23,
+      "converged": false,
+      "avg_rank": null,
+      "accuracy": null
+    },
+    "GD": {
+      "iterations": 10000,
+      "time": 4.543,
+      "final_grad_norm": 13.38,
+      "converged": false,
+      "avg_rank": null,
+      "accuracy": null
+    }
+  },
+  "rosenbrock": {
+    "ALHA": {
+      "iterations": 556,
+      "time": 0.444,
+      "final_grad_norm": 8.946e-09,
+      "converged": true,
+      "avg_rank": 45.4,
+      "accuracy": null
+    },
+    "L-BFGS (m=5)": {
+      "iterations": 546,
+      "time": 0.084,
+      "final_grad_norm": 3.888e-08,
+      "converged": true,
+      "avg_rank": 5,
+      "accuracy": null
+    },
+    "L-BFGS (m=10)": {
+      "iterations": 526,
+      "time": 0.086,
+      "final_grad_norm": 2.566e-08,
+      "converged": true,
+      "avg_rank": 10,
+      "accuracy": null
+    },
+    "L-BFGS (m=20)": {
+      "iterations": 514,
+      "time": 0.105,
+      "final_grad_norm": 3.295e-08,
+      "converged": true,
+      "avg_rank": 20,
+      "accuracy": null
+    },
+    "Adam": {
+      "iterations": 10000,
+      "time": 0.605,
+      "final_grad_norm": 2.645,
+      "converged": false,
+      "avg_rank": null,
+      "accuracy": null
+    },
+    "GD": {
+      "iterations": 10000,
+      "time": 0.426,
+      "final_grad_norm": 2.412,
+      "converged": false,
+      "avg_rank": null,
+      "accuracy": null
+    }
+  },
+  "logistic_mnist": {
+    "ALHA": {
+      "iterations": 72,
+      "time": 1.399,
+      "final_grad_norm": 9.249e-09,
+      "converged": true,
+      "avg_rank": 8.6,
+      "accuracy": null
+    },
+    "L-BFGS (m=5)": {
+      "iterations": 62,
+      "time": 2.35,
+      "final_grad_norm": 5.686e-08,
+      "converged": true,
+      "avg_rank": 5,
+      "accuracy": null
+    },
+    "L-BFGS (m=10)": {
+      "iterations": 52,
+      "time": 2.153,
+      "final_grad_norm": 3.877e-08,
+      "converged": true,
+      "avg_rank": 10,
+      "accuracy": null
+    },
+    "L-BFGS (m=20)": {
+      "iterations": 45,
+      "time": 1.936,
+      "final_grad_norm": 6.258e-08,
+      "converged": true,
+      "avg_rank": 20,
+      "accuracy": null
+    },
+    "Adam": {
+      "iterations": 10000,
+      "time": 139.204,
+      "final_grad_norm": 4.401e-05,
+      "converged": false,
+      "avg_rank": null,
+      "accuracy": null
+    },
+    "GD": {
+      "iterations": 10000,
+      "time": 138.82,
+      "final_grad_norm": 0.005097,
+      "converged": false,
+      "avg_rank": null,
+      "accuracy": null
+    }
+  },
+  "neural_network": {
+    "ALHA": {
+      "iterations": 10000,
+      "time": 772.709,
+      "final_grad_norm": 0.0004438,
+      "converged": false,
+      "avg_rank": 14.5,
+      "accuracy": 100.0
+    },
+    "L-BFGS (m=5)": {
+      "iterations": 10000,
+      "time": 2464.299,
+      "final_grad_norm": 0.0004477,
+      "converged": false,
+      "avg_rank": 5,
+      "accuracy": 100.0
+    },
+    "L-BFGS (m=10)": {
+      "iterations": 10000,
+      "time": 2787.814,
+      "final_grad_norm": 0.0003914,
+      "converged": false,
+      "avg_rank": 10,
+      "accuracy": 100.0
+    },
+    "L-BFGS (m=20)": {
+      "iterations": 10000,
+      "time": 2611.715,
+      "final_grad_norm": 0.000468,
+      "converged": false,
+      "avg_rank": 20,
+      "accuracy": 100.0
+    },
+    "Adam": {
+      "iterations": 10000,
+      "time": 509.866,
+      "final_grad_norm": 0.001531,
+      "converged": false,
+      "avg_rank": null,
+      "accuracy": 100.0
+    },
+    "GD": {
+      "iterations": 10000,
+      "time": 500.611,
+      "final_grad_norm": 0.0334,
+      "converged": false,
+      "avg_rank": null,
+      "accuracy": 95.72
+    }
+  },
+  "sparse_logistic": {
+    "ALHA": {
+      "iterations": 8,
+      "time": 0.167,
+      "final_grad_norm": 3.922e-09,
+      "converged": true,
+      "avg_rank": 4.2,
+      "accuracy": null
+    },
+    "L-BFGS (m=5)": {
+      "iterations": 8,
+      "time": 0.305,
+      "final_grad_norm": 2.384e-09,
+      "converged": true,
+      "avg_rank": 5,
+      "accuracy": null
+    },
+    "L-BFGS (m=10)": {
+      "iterations": 8,
+      "time": 0.329,
+      "final_grad_norm": 2.309e-09,
+      "converged": true,
+      "avg_rank": 10,
+      "accuracy": null
+    },
+    "L-BFGS (m=20)": {
+      "iterations": 8,
+      "time": 0.337,
+      "final_grad_norm": 2.309e-09,
+      "converged": true,
+      "avg_rank": 20,
+      "accuracy": null
+    },
+    "Adam": {
+      "iterations": 293,
+      "time": 4.242,
+      "final_grad_norm": 9.609e-09,
+      "converged": true,
+      "avg_rank": null,
+      "accuracy": null
+    },
+    "GD": {
+      "iterations": 2050,
+      "time": 28.471,
+      "final_grad_norm": 9.983e-09,
+      "converged": true,
+      "avg_rank": null,
+      "accuracy": null
+    }
+  }
+}
