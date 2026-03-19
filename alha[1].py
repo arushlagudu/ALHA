@@ -4,7 +4,7 @@ ALHA: Adaptive Low-rank Hessian Approximation
 Core algorithm implementation.
 
 Reference:
-    Lagudu, A. R. (2025). Adaptive Low-Rank Hessian Approximation for
+    Lagudu, A. R. (2026). Adaptive Low-Rank Hessian Approximation for
     Large-Scale Optimization: Theory, Algorithms, and Applications.
 """
 
