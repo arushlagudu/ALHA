@@ -154,7 +154,7 @@ ALHA adds:
   title   = {Adaptive Low-Rank Hessian Approximation for Large-Scale Optimization:
              Theory, Algorithms, and Applications},
   author  = {Lagudu, Arush Rao},
-  year    = {2025},
+  year    = {2026},
   note    = {Frisco Centennial High School}
 }
 ```
