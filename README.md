@@ -6,6 +6,28 @@ Unlike L-BFGS which requires you to choose a fixed memory parameter `m` upfront,
 
 ---
 
+## Repository Structure
+
+```
+ALHA/
+├── README.md                    # This file
+├── ALHA_paper.pdf               # Paper
+├── ALHA_experiments.ipynb       # Kaggle notebook (contains all code)
+└── results/
+    └── all_results.json         # Experiment results
+```
+
+---
+
+## Reproducing Results
+
+1. Open `ALHA_experiments.ipynb` in Kaggle
+2. Run all cells in order
+
+Results are saved to `results/all_results.json`.
+
+---
+
 ## Key Results
 
 ### Well-Conditioned Quadratic (κ=10, d=1000)
@@ -59,14 +81,14 @@ ALHA is **28% faster** than the best fixed-rank L-BFGS (1.40s vs 1.94s) with the
 ### Neural Network on Real MNIST (2-layer MLP, n=5000, d=39760)
 | Method | Time (s) | \|\|grad\|\| | Train Acc. | Avg Rank |
 |--------|----------|------------|-----------|----------|
-| GD | 459.3 | 3.34e-02 | 95.72% | -- |
-| L-BFGS (m=5) | 2288.2 | 4.48e-04 | 100.00% | 5 |
-| L-BFGS (m=10) | 2699.0 | 3.91e-04 | 100.00% | 10 |
-| L-BFGS (m=20) | 2661.6 | 4.68e-04 | 100.00% | 20 |
-| Adam | 467.8 | 1.53e-03 | 100.00% | -- |
-| **ALHA** | **697.0** | **4.44e-04** | **100.00%** | **14.5** |
+| GD | 500.6 | 3.34e-02 | 95.72% | -- |
+| L-BFGS (m=5) | 2464.3 | 4.48e-04 | 100.00% | 5 |
+| L-BFGS (m=10) | 2787.8 | 3.91e-04 | 100.00% | 10 |
+| L-BFGS (m=20) | 2611.7 | 4.68e-04 | 100.00% | 20 |
+| Adam | 509.9 | 1.53e-03 | 100.00% | -- |
+| **ALHA** | **772.7** | **4.44e-04** | **100.00%** | **14.5** |
 
-ALHA reaches 100% training accuracy **3.3–3.9x faster** than all fixed-rank L-BFGS variants.
+ALHA reaches 100% training accuracy **3.2–3.6x faster** than all fixed-rank L-BFGS variants.
 
 ### Sparse Logistic Regression (n=2000, d=5000)
 | Method | Iterations | Time (s) | \|\|grad\|\| | Avg Rank |
@@ -78,72 +100,7 @@ ALHA reaches 100% training accuracy **3.3–3.9x faster** than all fixed-rank L-
 | Adam | 293 | 4.24 | 9.61e-09 | -- |
 | **ALHA** | **8** | **0.17** | **3.92e-09** | **4.2** |
 
-ALHA matches L-BFGS on iterations while being **2x faster** on wall-clock time by automatically using low rank (4.2) on this easy problem.
-
----
-
-## Installation
-
-```bash
-git clone https://github.com/YOUR_USERNAME/ALHA.git
-cd ALHA
-pip install -r requirements.txt
-```
-
-**Requirements:**
-```
-numpy
-scipy
-scikit-learn
-```
-
----
-
-## Reproducing Results
-
-Run all six experiments:
-```bash
-python experiments/run_experiments.py
-```
-
-Run a specific problem:
-```bash
-python experiments/run_experiments.py --problem ill_conditioned_quadratic
-python experiments/run_experiments.py --problem logistic_mnist
-python experiments/run_experiments.py --problem neural_network
-```
-
-Available problems:
-- `well_conditioned_quadratic`
-- `ill_conditioned_quadratic`
-- `rosenbrock`
-- `logistic_mnist`
-- `neural_network`
-- `sparse_logistic`
-
-Results are saved to `results/` as JSON files.
-
----
-
-## Repository Structure
-
-```
-ALHA/
-├── README.md
-├── requirements.txt
-├── src/
-│   ├── alha.py            # ALHA algorithm
-│   ├── problems.py        # Six test problems
-│   └── baselines.py       # GD, L-BFGS, Adam baselines
-├── experiments/
-│   └── run_experiments.py # Main experiment runner
-├── results/
-│   └── all_results.json   # Experiment results
-├── paper/
-│   └── ALHA_paper.pdf     # Paper
-└── notebooks/
-    └── ALHA_experiments.ipynb  # Kaggle notebook
-```
+ALHA matches L-BFGS on iterations while being **2x faster** on wall-clock time by automatically using low rank (4.2).
 
 ---
 
@@ -156,19 +113,6 @@ ALHA adapts rank using two signals at each iteration:
 **2. Gradient Norm Progress Rate** — measures the ratio of the current gradient norm to the gradient norm `w` iterations ago. If progress is slow, rank increases.
 
 Rank increases if **either** signal is poor. Rank decreases only if **both** signals agree quality is sufficient. This asymmetric rule prevents premature rank reduction on difficult problems.
-
-```python
-from src.alha import alha, ALHAConfig
-
-config = ALHAConfig(
-    m_min=2, m_max=50, m_0=5,       # rank bounds
-    eps_low=0.1, eps_high=0.3,       # quality thresholds
-    eps_tol=1e-8, max_iter=10000     # convergence
-)
-
-result = alha(f, grad_f, x0, config)
-print(f"Converged in {result.n_iter} iterations, avg rank {sum(result.rank_history)/len(result.rank_history):.1f}")
-```
 
 ---
 
