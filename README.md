@@ -112,4 +112,3 @@ Results save to `results/all_results.json`. Your numbers may differ slightly fro
 
 ---
 
-## License
